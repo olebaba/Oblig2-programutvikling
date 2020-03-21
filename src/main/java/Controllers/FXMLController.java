@@ -56,8 +56,8 @@ public class FXMLController {
         }
     }
 
-    public void enableGUI(boolean bool){
-        if (bool){
+    public void enableGUI(boolean enable){
+        if (enable){
             btnOpenFile.setDisable(true);
             btnSaveFile.setDisable(true);
             filename.setDisable(true);
@@ -91,8 +91,7 @@ public class FXMLController {
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                 }
-                btnOpenFile.setDisable(false);
-                btnSaveFile.setDisable(false);
+                enableGUI(false);
                 labInfo.setText("Fant ikke angitt fil.");
                 System.out.println("Fant ikke angitt fil.");
             });

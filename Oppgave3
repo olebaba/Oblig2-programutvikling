@@ -1,3 +1,0 @@
-Oppgave 3.3:
-    1. draw() burde være abstrakt ettersom alle klassene har metoden, men med forskjellig implementasjon.
-    2.

@@ -17,7 +17,7 @@ public class FileLoader extends Task<String> {
     protected String call() throws Exception {
         String out = "";
         try{
-            Thread.sleep(3000);
+            Thread.sleep(3000); //vise at GUI blir slått av
         }catch (InterruptedException e){
         }
 

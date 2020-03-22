@@ -107,5 +107,8 @@ class DrawingProgram{
 
         //3.3.3
         Drawings drawings = new Drawings(c1, c2, s1, s2);
+
+        //3.3.4
+        Frame frame = new Frame(c1.getType(), c1, 5);
     }
 }

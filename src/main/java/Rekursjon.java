@@ -1,5 +1,3 @@
-package App;
-
 public class Rekursjon {
     static int sum(int x) {
         if (x <= 1) {
@@ -7,6 +5,7 @@ public class Rekursjon {
         }
         return x * sum(x - 1);
     }
+
     static int pow(int base, int exponent) {
         if (exponent == 0)
             return 1;
@@ -17,14 +16,14 @@ public class Rekursjon {
             return (base * temp * temp);
     }
 
-    static void rvereseArray(int arr[], int start, int end) {
+    static void reverseArray(int arr[], int start, int end) {
         int temp;
         if (start >= end)
             return;
         temp = arr[start];
         arr[start] = arr[end];
         arr[end] = temp;
-        rvereseArray(arr, start + 1, end - 1);
+        reverseArray(arr, start + 1, end - 1);
     }
 
     static void printArray(int arr[], int size) {
@@ -45,42 +44,36 @@ public class Rekursjon {
         }
         return minstVerdi(tall, start, last);
     }
-        static int arr[] = {2, 3, 5, 20, 3};
 
-        /* Recursive Method to search x in arr[l..r] */
-        static int recSearch(int arr[], int l, int r, int x)
-        {
-            if (r < l)
-                return -1;
-            if (arr[l] == x)
-                return l;
-            if (arr[r] == x)
-                return r;
-            return recSearch(arr, l+1, r-1, x);
+    static int arr[] = {2, 3, 5, 20, 3};
 
+    /* Recursive Method to search x in arr[l..r] */
+    static int recSearch(int arr[], int l, int r, int x) {
+        if (r < l)
+            return -1;
+        if (arr[l] == x)
+            return l;
+        if (arr[r] == x)
+            return r;
+        return recSearch(arr, l + 1, r - 1, x);
+    }
 
-
-     System.out.println("Oppgave 1.1");
+    public static void main(String[] args) {
+        System.out.println("Oppgave 1.1");
         System.out.println(sum(10));
 
         System.out.println("Oppagve 1.2");
         System.out.println(pow(3, 1));
 
-    int arr[] = {10, 72, 3, 4, 5, 6};
-    rvereseArray(arr, 0, 5);
+        arr = new int[]{10, 72, 3, 4, 5, 6};
+        reverseArray(arr, 0, 5);
         System.out.println("Oppgave 1.3");
-    printArray(arr, 6);
+        printArray(arr, 6);
 
 
-
-
-    int x = 4;
-    int element = recSearch(arr, 0, arr.length - 1, x);
-            if (element != -1)
-            System.out.println("Oppgave 1.5: "+"Element x er " + element);
-                 else System.out.println("Finner ikke element x");
-
-
-
-
-}}
+        int x = 4;
+        int element = recSearch(arr, 0, arr.length - 1, x);
+        if (element != -1) System.out.println("Oppgave 1.5: " + "Element x er " + element);
+        else System.out.println("Finner ikke element x");
+    }
+}

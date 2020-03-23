@@ -1,3 +1,4 @@
+//1.1
 public class Rekursjon {
     static int sum(int x) {
         if (x <= 1) {
@@ -5,7 +6,7 @@ public class Rekursjon {
         }
         return x * sum(x - 1);
     }
-
+//1.2
     static int pow(int base, int exponent) {
         if (exponent == 0)
             return 1;
@@ -15,7 +16,7 @@ public class Rekursjon {
         else
             return (base * temp * temp);
     }
-
+//1.3
     static void reverseArray(int arr[], int start, int end) {
         int temp;
         if (start >= end)
@@ -31,7 +32,7 @@ public class Rekursjon {
             System.out.print(arr[i] + " ");
         System.out.println("");
     }
-
+//1.4
     public static int minstVerdi(int[] tall, int start, int last) {
 
         if (start == last) {
@@ -45,18 +46,26 @@ public class Rekursjon {
         return minstVerdi(tall, start, last);
     }
 
+    public static int minsttall(int[] array, int teller){
+        if(array.length==teller){
+            return 0;
+        }
+        return Math.min(array[teller],minsttall(array, ++teller));
+    }
+
     static int arr[] = {2, 3, 5, 20, 3};
 
-    /* Recursive Method to search x in arr[l..r] */
-    static int recSearch(int arr[], int l, int r, int x) {
+  //1.5
+    static int Heltall(int arr[], int l, int r, int x) {
         if (r < l)
             return -1;
         if (arr[l] == x)
             return l;
         if (arr[r] == x)
             return r;
-        return recSearch(arr, l + 1, r - 1, x);
+        return Heltall(arr, l + 1, r - 1, x);
     }
+
 
     public static void main(String[] args) {
         System.out.println("Oppgave 1.1");
@@ -70,10 +79,12 @@ public class Rekursjon {
         System.out.println("Oppgave 1.3");
         printArray(arr, 6);
 
-
         int x = 4;
-        int element = recSearch(arr, 0, arr.length - 1, x);
+        int element = Heltall(arr, 0, arr.length - 1, x);
         if (element != -1) System.out.println("Oppgave 1.5: " + "Element x er " + element);
         else System.out.println("Finner ikke element x");
+
+
+
     }
 }
